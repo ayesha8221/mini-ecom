@@ -1,5 +1,5 @@
 // Import function from Product Model
-import { getProducts, getProductById, } from "../models/productModels.js";
+import { getProducts, getProductById, insertProduct, deleteProductByID, updateProductByID} from "../models/productModels.js";
   
 // Get All Products
 export const showProducts = (req, res) => {
@@ -54,4 +54,29 @@ export const createProduct = (req, res) => {
         }
     });
 }
+
+// delete a product
+export const deleteProduct = (req, res) => {
+    const id = req.params.id;
+    deleteProductByID(id, (err, results) => {
+      if (err) {
+        res.send(err);
+      } else {
+        res.json(results);
+      }
+    });
+  };
+
+  // update a product
+export const updateProduct = (req, res) => {
+    const id = req.params.id;
+    const data = req.body;
+    updateProductByID(id, data, (err, results) => {
+      if (err) {
+        res.send(err);
+      } else {
+        res.json(results);
+      }
+    });
+  };
   

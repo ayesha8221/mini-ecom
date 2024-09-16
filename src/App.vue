@@ -5,11 +5,14 @@
 </template>
 
 <script>
+
 import Navbarcomp from './components/Navbarcomp.vue'
 import Footercomp from './components/Footercomp.vue'
+
+
 export default {
   components: {
-    Navbarcomp , Footercomp
+    Navbarcomp , Footercomp,
   },
 };
 </script>

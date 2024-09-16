@@ -1,8 +1,12 @@
 // import express
 import express from "express";
-  
+import bodyParser from "body-parser";
+
+// app.use(bodyParser.json()); 
+
+
 // import function from controller
-import { showProducts, showProductById,} from "../controllers/products.js";
+import { showProducts, showProductById, createProduct, deleteProduct, updateProduct} from "../controllers/products.js";
   
 // init express router
 const router = express.Router();
@@ -13,8 +17,14 @@ router.get('/products', showProducts);
 // Get Single Product
 router.get('/products/:id', showProductById);
   
-// Create New Product
-// router.post('/products', createProduct);
+// Add New Product
+router.post('/products', createProduct);
+
+// Delete a product
+router.delete('/products/remove/:id', deleteProduct);
+
+// Update a product
+router.put("/products/:id", updateProduct);
 
   
 // export default router

@@ -1,7 +1,7 @@
 <template>
 <div class="container">
         <div class="card mx-auto my-2">
-            <router-link :to="{ name: 'products', params: { id: product.productsID } }">
+            <router-link :to="{ name: 'product', params: { id: product.productsID } }">
                 <img :src="product.img" :alt="product.name" />
                 <h3>{{ product.name }}</h3>
                 <p>{{ product.price }}</p>
